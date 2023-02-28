@@ -159,7 +159,7 @@ class LinkedList {
                     l.head = l.insertAtPos(in.nextInt(), in.nextInt(), l.head);
                 }
                 case 4 -> l.head = l.delete(in.nextInt(), l.head);
-                case 5 -> System.out.println(l.length(l.head));
+                case 5 -> log.log(Level.INFO,()->""+l.length(l.head));
                 case 6 -> l.display(l.head);
                 case 7 -> System.exit(0);
                 default -> log.info("\n Wrong Choice!");

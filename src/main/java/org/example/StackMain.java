@@ -79,7 +79,7 @@ class Stack
 }
 
 
-public class StackMain {
+class StackMain {
 
     public static void firstname()
     {

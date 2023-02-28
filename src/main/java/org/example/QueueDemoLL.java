@@ -58,7 +58,6 @@ class Queue{
 
         while(tmp!=null){
 
-            System.out.print(tmp.data+" ");
             LNode finalTmp = tmp;
             log.log(Level.INFO,()->""+ finalTmp.data);
 
@@ -70,7 +69,7 @@ class Queue{
 
 }
 
-public class QueueDemoLL{
+class QueueDemoLL{
 
     public static void firstname()
     {
