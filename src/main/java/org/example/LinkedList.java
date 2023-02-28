@@ -2,6 +2,8 @@ package org.example;
 
 
 import java.util.Scanner;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 class LLNode{
 
@@ -115,50 +117,54 @@ class LinkedList {
 
     void display(LLNode head)
     {
+        Logger li=Logger.getLogger(LinkedList.class.getName());
         LLNode ttmp=head;
         while(ttmp!=null)
-        {System.out.print(ttmp.data+" ");
+        {
+            LLNode finalTtmp = ttmp;
+            li.log(Level.INFO,() -> finalTtmp.data + "");
             ttmp=ttmp.next;
         }
     }
 
     public static void firstname()
     {
+        Logger log=Logger.getLogger(LinkedList.class.getName());
         LinkedList l=new LinkedList();
         l.head=null;
         Scanner in=new Scanner(System.in);
         do
         {
-            System.out.println("\n********* MENU *********");
-            System.out.println("\n1.Insert In End");
-            System.out.println("\n2.Insert In Beg");
-            System.out.println("\n3.Insert At A  Particular Pos");
-            System.out.println("\n4.Delete At a Pos");
-            System.out.println("\n5.Length");
-            System.out.println("\n6.Display");
-            System.out.println("\n7.EXIT");
-            System.out.println("\nenter ur choice : ");
+            log.info("\n********* MENU *********");
+            log.info("\n1.Insert In End");
+            log.info("\n2.Insert In Beg");
+            log.info("\n3.Insert At A  Particular Pos");
+            log.info("\n4.Delete At a Pos");
+            log.info("\n5.Length");
+            log.info("\n6.Display");
+            log.info("\n7.EXIT");
+            log.info("\nenter ur choice : ");
             int n=in.nextInt();
             switch (n) {
                 case 1 -> {
-                    System.out.println("\nenter the value ");
+                    log.info("\nenter the value ");
                     l.head = l.insertInEnd(in.nextInt(), l.head);
                 }
                 case 2 -> {
-                    System.out.println("\nenter the value");
+                    log.info("\nenter the value");
                     l.head = l.insertInBeg(in.nextInt(), l.head);
                 }
                 case 3 -> {
-                    System.out.println("\nenter the value");
+                    log.info("\nenter the value");
                     l.head = l.insertAtPos(in.nextInt(), in.nextInt(), l.head);
                 }
                 case 4 -> l.head = l.delete(in.nextInt(), l.head);
                 case 5 -> System.out.println(l.length(l.head));
                 case 6 -> l.display(l.head);
                 case 7 -> System.exit(0);
-                default -> System.out.println("\n Wrong Choice!");
+                default -> log.info("\n Wrong Choice!");
             }
-            System.out.println("\n do u want to cont...  Press 1" );
+            log.info("\n do u want to cont...  Press 1" );
         }while(in.nextInt()==1);
 
     }

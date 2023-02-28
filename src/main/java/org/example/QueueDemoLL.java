@@ -1,5 +1,8 @@
 package org.example;
 
+import java.util.logging.Level;
+import java.util.logging.Logger;
+
 class LNode{
 
     int data;
@@ -13,7 +16,7 @@ class LNode{
 
 
 class Queue{
-
+    static Logger log=Logger.getLogger(Queue.class.getName());
     LNode enqueue(LNode head, int a)
     {
         LNode tmp=new LNode(a);
@@ -34,7 +37,7 @@ class Queue{
     LNode dequeue(LNode head)
     {
         if(head==null)
-            System.out.println("underflow");
+            log.info("underflow");
         else
             head=head.next;
         return head;
@@ -43,10 +46,10 @@ class Queue{
     void display(LNode head)
     {
 
-        System.out.println("\n list is : ");
+        log.info("\n list is : ");
         if(head==null){
 
-            System.out.println("no LNodes");
+            log.info("no LNodes");
 
             return;
         }
@@ -56,6 +59,8 @@ class Queue{
         while(tmp!=null){
 
             System.out.print(tmp.data+" ");
+            LNode finalTmp = tmp;
+            log.log(Level.INFO,()->""+ finalTmp.data);
 
             tmp=tmp.next;
 
