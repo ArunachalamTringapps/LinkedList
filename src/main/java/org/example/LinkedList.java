@@ -17,7 +17,7 @@ class LLNode{
 }
 
 
-class Main{
+class LinkedList {
 
     LLNode head;
 
@@ -138,9 +138,9 @@ class Main{
         }
     }
 
-    public static void main(String[] args)
+    public static void firstname()
     {
-        Main l=new Main();
+        LinkedList l=new LinkedList();
         l.head=null;
         Scanner in=new Scanner(System.in);
         do
