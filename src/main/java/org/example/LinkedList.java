@@ -112,22 +112,6 @@ class LinkedList {
     }
 
 
-    LLNode reverse(LLNode head)
-    {
-        LLNode prevLNode=null,curLNode=head,nextLNode;
-        while(curLNode!=null)
-        {
-            nextLNode=curLNode.next;
-            curLNode.next=prevLNode;
-
-            prevLNode=curLNode;
-            curLNode=nextLNode;
-        }
-
-        head=prevLNode;
-        return head;
-    }
-
 
     void display(LLNode head)
     {
@@ -151,9 +135,8 @@ class LinkedList {
             System.out.println("\n3.Insert At A  Particular Pos");
             System.out.println("\n4.Delete At a Pos");
             System.out.println("\n5.Length");
-            System.out.println("\n6.Reverse");
-            System.out.println("\n7.Display");
-            System.out.println("\n8.EXIT");
+            System.out.println("\n6.Display");
+            System.out.println("\n7.EXIT");
             System.out.println("\nenter ur choice : ");
             int n=in.nextInt();
             switch (n) {
@@ -171,9 +154,8 @@ class LinkedList {
                 }
                 case 4 -> l.head = l.delete(in.nextInt(), l.head);
                 case 5 -> System.out.println(l.length(l.head));
-                case 6 -> l.head = l.reverse(l.head);
-                case 7 -> l.display(l.head);
-                case 8 -> System.exit(0);
+                case 6 -> l.display(l.head);
+                case 7 -> System.exit(0);
                 default -> System.out.println("\n Wrong Choice!");
             }
             System.out.println("\n do u want to cont...  Press 1" );
