@@ -70,6 +70,9 @@ class Queue{
 }
 
 class QueueDemoLL{
+    private QueueDemoLL() {
+
+    }
 
     public static void firstname()
     {

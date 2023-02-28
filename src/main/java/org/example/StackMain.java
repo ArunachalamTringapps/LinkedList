@@ -80,6 +80,9 @@ class Stack
 
 
 class StackMain {
+    private StackMain(){
+
+    }
 
     public static void firstname()
     {
